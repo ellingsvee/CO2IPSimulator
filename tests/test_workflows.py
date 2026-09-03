@@ -73,7 +73,6 @@ def test_simulator_output_can_drive_abc_smc(layered_dome):
     assert np.all((30.0 <= samples) & (samples <= 70.0))
 
 
-@pytest.mark.slow
 def test_sleipner_geometry_and_trapfill_conserve_mass():
     """Validate the published field geometry when its separately licensed data exist."""
     from examples.sleipner.config import (

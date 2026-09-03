@@ -39,9 +39,6 @@ manifest-path = "Cargo.toml"
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
-markers = [
-    "slow: validation against the separately distributed Sleipner data.",
-]
 
 [tool.ruff]
 target-version = "py313"

@@ -42,8 +42,6 @@ cargo clippy --all-targets --all-features
 cargo test --all-features
 ```
 
-Run `uv run pytest -m slow` to validate the Sleipner geometry and mass balance when the separately distributed field data are available.
-
 The experiment TOML files contain the sampling settings, random seeds, model parameters, and output locations used for the paper.
 
 ## Citation and license
