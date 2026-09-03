@@ -1,0 +1,47 @@
+[pymc]
+draws = 1000
+chains = 5
+cores = 5
+seed = 0
+progressbar = true
+threshold = 0.75
+correlation_threshold = 0.01
+
+[inference.threshold_pressure]
+layer_names = ["Shale_1", "Shale_2", "Shale_3"]
+distribution = "lognormal"
+mu = [3.988984, 3.988984, 3.988984]
+sigma = [0.7, 0.7, 0.7]
+
+[inference.rate_limit]
+name = "lambda_s"
+distribution = "lognormal"
+mu = -21.927239
+sigma = 2.3
+
+[summary]
+mode = "mass-and-footprints"
+mass_mode = "fraction"
+mass_measure = "footprint_area"
+mass_relative_epsilon = 0.1
+mass_epsilon_floor = 0.005
+moment_relative_epsilon = 0.3
+moment_epsilon_floor = 0.003
+
+[extras]
+scenario = "grf"
+time_rtol = 1e-3
+max_substeps = 4096
+calibration_years = [2, 4, 6, 8, 10, 12, 14, 16]
+posterior_ensemble_samples = 500
+forecast_years_stop = 50
+forecast_years_step = 1
+truth_detection_threshold_m = 3.0
+run_operator = true
+operator_thresholds = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 12.0, 14.0]
+outline_thresholds = [0.0, 3.0, 8.0]
+detection_cases = [
+  { key = "m0", label = "Assume 0 m", model = 0.0 },
+  { key = "m3", label = "Assume 3 m", model = 3.0 },
+  { key = "m8", label = "Assume 8 m", model = 8.0 },
+]

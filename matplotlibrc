@@ -1,0 +1,31 @@
+text.usetex : True
+font.family : serif
+font.serif : Computer Modern Roman
+
+
+# Specific for the sleipner birds-eye ensemble plots
+# axes.labelsize : 16
+# axes.titlesize : 16
+# font.size : 16
+# legend.fontsize : 16
+# xtick.labelsize : 16
+# ytick.labelsize : 16
+# figure.titlesize : 16
+
+# All of the rest
+axes.labelsize : 18
+axes.titlesize : 20
+font.size : 18
+legend.fontsize : 18
+xtick.labelsize : 18
+ytick.labelsize : 18
+figure.titlesize : 18
+
+# The scenarios
+# axes.labelsize : 22
+# axes.titlesize : 22
+# font.size : 22
+# legend.fontsize : 22
+# xtick.labelsize : 22
+# ytick.labelsize : 22
+# figure.titlesize : 22

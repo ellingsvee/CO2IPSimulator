@@ -1,0 +1,43 @@
+[pymc]
+draws = 1000
+chains = 5
+cores = 5
+seed = 0
+progressbar = true
+threshold = 0.75
+correlation_threshold = 0.01
+
+[inference.threshold_pressure]
+layer_names = [
+  "Shale_1",
+  "Shale_2",
+  "Shale_3",
+  "Shale_4",
+  "Shale_5",
+  "Shale_6",
+  "Shale_7",
+  "Shale_thick",
+]
+distribution = "lognormal"
+mu = [4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2]
+sigma = [0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75]
+
+[inference.rate_limit]
+name = "lambda_s"
+distribution = "lognormal"
+mu = -25.328436
+sigma = 2.3
+
+[summary]
+mode = "mass"
+mass_mode = "fraction"
+mass_measure = "footprint_area"
+mass_relative_epsilon = 0.3
+mass_epsilon_floor = 0.06
+
+[extras]
+snapshot_years = [2010, 2023]
+posterior_ensemble_samples = 500
+output_dir = "examples/sleipner/output/abc_mass"
+time_rtol = 1e-3
+max_substeps = 32768

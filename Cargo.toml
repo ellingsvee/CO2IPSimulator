@@ -1,0 +1,58 @@
+[package]
+name = "CO2IPSimulator"
+version = "0.1.0"
+edition = "2024"
+description = "Rust kernels for the CO2IPSimulator Python package."
+license = "BSD-3-Clause"
+repository = "https://github.com/ellingsvee/CO2IPSimulator"
+readme = "README.md"
+
+
+[lib]
+name = "rust"
+path = "src/rust/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["extension-module"]
+extension-module = ["pyo3/extension-module"]
+
+[dependencies]
+pyo3 = { version = "0.28.3" }
+numpy = "0.28"
+ndarray = "0.17"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+
+[lints.clippy]
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
+# DENY PANICS:
+unwrap_used = "deny"
+expect_used = "deny"
+unreachable = "deny"
+unimplemented = "deny"
+unchecked_time_subtraction = "deny"
+todo = "deny"
+string_slice = "deny"
+panic_in_result_fn = "deny"
+panic = "deny"
+exit = "deny"
+needless_range_loop = "deny"
+too_many_arguments = "deny"
+identity_op = "deny"
+# RELAXED: dense-grid numerics. Flat indices, index arithmetic, usize/i64/f64
+# conversions and float-driven loops are the substance of these kernels.
+indexing_slicing = "allow"
+arithmetic_side_effects = "allow"
+as_conversions = "allow"
+cast_possible_truncation = "allow"
+cast_possible_wrap = "allow"
+cast_precision_loss = "allow"
+cast_sign_loss = "allow"
+similar_names = "allow"
+while_float = "allow"
+# `mul_add` without target-feature=+fma lowers to a libm call in these loops.
+suboptimal_flops = "allow"
