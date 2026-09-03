@@ -46,4 +46,4 @@ The experiment TOML files contain the sampling settings, random seeds, model par
 
 ## Citation and license
 
-Citation metadata are provided in [`CITATION.cff`](CITATION.cff). The source code is released under the [BSD 3-Clause License](LICENSE). The bundled Sleipner data have separate terms; see [`examples/sleipner/data/README.md`](examples/sleipner/data/README.md).
+Citation metadata are provided in [`CITATION.cff`](CITATION.cff). The source code is released under the [BSD 3-Clause License](LICENSE). The bundled Sleipner data have separate terms, see [`examples/sleipner/data/README.md`](examples/sleipner/data/README.md).
